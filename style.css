@@ -548,16 +548,6 @@ button {
     opacity: 1;
 }
 
-.image-number {
-    position: absolute;
-    top: 20px;
-    left: 22px;
-    z-index: 3;
-    color: #aaa;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
 .image-label {
     position: absolute;
     left: 20px;
@@ -1604,40 +1594,6 @@ button {
                 opacity 0.55s ease;
     opacity: 0;
 }
-
-/* Mobile tap ripple — bigger ring, no persistent dot */
-@media (hover: none) {
-    /* Hide the core dot on touch — finger is the cursor */
-    .cursor-dot::before {
-        opacity: 0;
-    }
-
-    /* Tap ring: larger, more visible for a finger */
-    .cursor-dot::after {
-        width: 44px;
-        height: 44px;
-        border: 1.5px solid rgba(255, 255, 255, 0.35);
-    }
-
-    /* On tap: ring bursts out and fades */
-    .cursor-dot.ripple::after {
-        transform: translate(-50%, -50%) scale(2.8);
-        border-color: rgba(255, 255, 255, 0);
-        opacity: 0;
-        transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1),
-                    border-color 0.5s ease,
-                    opacity 0.5s ease;
-    }
-
-    /* Hide the dot between taps — only show on touch */
-    .cursor-dot {
-        opacity: 0 !important;
-    }
-    .cursor-dot.tap-active {
-        opacity: 1 !important;
-    }
-}
-
 
 /* =========================
    REDUCED MOTION

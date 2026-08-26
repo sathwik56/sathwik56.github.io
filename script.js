@@ -275,8 +275,8 @@ if (heroVisual && !isTouchDevice) {
 
 /* =========================
    CURSOR / TOUCH DOT
-   Desktop: smooth lerp follow + ring
-   Mobile: tap ripple at touch point
+   Same smooth behaviour on desktop and mobile.
+   Dot + ring, click/tap ripple, hover glow.
 ========================= */
 
 (function () {
@@ -285,106 +285,71 @@ if (heroVisual && !isTouchDevice) {
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const isTouch = window.matchMedia("(hover: none)").matches;
-
     let targetX = 0, targetY = 0;
     let currentX = 0, currentY = 0;
     let rafId = null;
     let rippleTimer = null;
-    let tapHideTimer = null;
 
     const LERP = 0.16;
     function lerp(a, b, t) { return a + (b - a) * t; }
 
-    /* ---- DESKTOP: smooth follow loop ---- */
     function tick() {
-        if (!isTouch) {
-            currentX = lerp(currentX, targetX, LERP);
-            currentY = lerp(currentY, targetY, LERP);
-            dot.style.left = currentX + "px";
-            dot.style.top  = currentY + "px";
-        }
+        currentX = lerp(currentX, targetX, LERP);
+        currentY = lerp(currentY, targetY, LERP);
+        dot.style.left = currentX + "px";
+        dot.style.top  = currentY + "px";
         rafId = requestAnimationFrame(tick);
     }
     tick();
 
     function triggerRipple() {
         dot.classList.remove("ripple");
-        void dot.offsetWidth; // force reflow to restart animation
-        dot.classList.add("ripple", "pressed");
+        void dot.offsetWidth;
+        dot.classList.add("pressed", "ripple");
         clearTimeout(rippleTimer);
         rippleTimer = setTimeout(() => {
             dot.classList.remove("ripple", "pressed");
         }, 560);
     }
 
-    if (!isTouch) {
-        /* ---- DESKTOP handlers ---- */
-        document.addEventListener("pointermove", (e) => {
-            targetX = e.clientX;
-            targetY = e.clientY;
-            dot.classList.add("visible");
-        }, { passive: true });
+    /* Move */
+    document.addEventListener("pointermove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        dot.classList.add("visible");
+    }, { passive: true });
 
-        document.addEventListener("pointerdown", (e) => {
-            targetX = e.clientX;
-            targetY = e.clientY;
-            dot.classList.add("visible");
-            triggerRipple();
-        }, { passive: true });
+    /* Press / tap */
+    document.addEventListener("pointerdown", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        dot.classList.add("visible");
+        triggerRipple();
+    }, { passive: true });
 
-        document.addEventListener("pointerup", () => {
-            dot.classList.remove("pressed");
-        }, { passive: true });
+    document.addEventListener("pointerup", () => {
+        dot.classList.remove("pressed");
+    }, { passive: true });
 
-        document.addEventListener("pointercancel", () => {
-            dot.classList.remove("pressed", "ripple");
-        }, { passive: true });
+    document.addEventListener("pointercancel", () => {
+        dot.classList.remove("pressed", "ripple");
+    }, { passive: true });
 
-        /* Hover glow on interactive elements */
-        const sel = "a, button, [role='button'], input, textarea, select, [tabindex]";
-        document.addEventListener("pointerover", (e) => {
-            if (e.target.closest(sel)) dot.classList.add("hovering");
-        }, { passive: true });
-        document.addEventListener("pointerout", (e) => {
-            if (e.target.closest(sel)) dot.classList.remove("hovering");
-        }, { passive: true });
+    /* Hover glow on interactive elements */
+    const sel = "a, button, [role='button'], input, textarea, select, [tabindex]";
+    document.addEventListener("pointerover", (e) => {
+        if (e.target.closest(sel)) dot.classList.add("hovering");
+    }, { passive: true });
+    document.addEventListener("pointerout", (e) => {
+        if (e.target.closest(sel)) dot.classList.remove("hovering");
+    }, { passive: true });
 
-        document.documentElement.addEventListener("pointerleave", () => {
-            dot.classList.remove("visible", "hovering", "pressed", "ripple");
-        }, { passive: true });
+    /* Hide when pointer leaves window */
+    document.documentElement.addEventListener("pointerleave", () => {
+        dot.classList.remove("visible", "hovering", "pressed", "ripple");
+    }, { passive: true });
 
-    } else {
-        /* ---- MOBILE/TOUCH handlers ---- */
-        /* Snap dot to tap position instantly, show ripple, then hide */
-        document.addEventListener("touchstart", (e) => {
-            const t = e.touches[0];
-            // Snap immediately — no lerp on touch
-            currentX = targetX = t.clientX;
-            currentY = targetY = t.clientY;
-            dot.style.left = currentX + "px";
-            dot.style.top  = currentY + "px";
-
-            dot.classList.add("tap-active");
-            triggerRipple();
-
-            // Auto-hide after ripple completes
-            clearTimeout(tapHideTimer);
-            tapHideTimer = setTimeout(() => {
-                dot.classList.remove("tap-active");
-            }, 600);
-        }, { passive: true });
-
-        document.addEventListener("touchend", () => {
-            dot.classList.remove("pressed");
-        }, { passive: true });
-
-        document.addEventListener("touchcancel", () => {
-            dot.classList.remove("pressed", "ripple", "tap-active");
-        }, { passive: true });
-    }
-
-    /* Pause RAF when tab hidden */
+    /* Pause when tab hidden */
     document.addEventListener("visibilitychange", () => {
         if (document.hidden) cancelAnimationFrame(rafId);
         else tick();
