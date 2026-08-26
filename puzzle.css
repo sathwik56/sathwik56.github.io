@@ -1,0 +1,505 @@
+/* =========================
+   RESET & BASE
+========================= */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #f5f5f5;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+    pointer-events: none;
+}
+
+.bg-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: -1;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.p-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(8,8,8,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.p-nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.p-logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+}
+
+.p-logo span {
+    color: #777;
+}
+
+.p-back-link {
+    color: #666;
+    font-size: 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.p-back-link:hover {
+    color: white;
+    transform: translateX(-4px);
+}
+
+.p-back-link:focus-visible {
+    outline: 2px solid #888;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.p-main {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 120px 20px 80px;
+}
+
+.p-content {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.p-heading {
+    text-align: center;
+    width: 100%;
+}
+
+.p-label {
+    color: #555;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.p-heading h1 {
+    font-size: clamp(48px, 10vw, 82px);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -4px;
+    margin-bottom: 18px;
+}
+
+.p-heading h1 span {
+    color: #777;
+}
+
+.p-subtitle {
+    color: #666;
+    font-size: 13px;
+    max-width: 420px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   STATS BAR
+========================= */
+
+.p-stats {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.p-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 12px 20px;
+    border: 1px solid #252525;
+    border-radius: 22px;
+    background: #0e0e0e;
+    min-width: 80px;
+}
+
+.p-stat-label {
+    color: #555;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.p-stat-value {
+    color: #ccc;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.p-btn {
+    padding: 11px 22px;
+    border-radius: 30px;
+    background: white;
+    color: black;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.p-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+}
+
+.p-btn:focus-visible {
+    outline: 2px solid #888;
+    outline-offset: 3px;
+}
+
+.p-btn-ghost {
+    background: transparent;
+    color: #bbb;
+    border-color: #333;
+}
+
+.p-btn-ghost:hover {
+    color: white;
+    border-color: #666;
+    box-shadow: none;
+}
+
+
+/* =========================
+   PUZZLE BOARD
+========================= */
+
+.p-board {
+    width: 100%;
+    max-width: 480px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: #0f0f0f;
+    border: 1px solid #252525;
+    border-radius: 24px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+.p-tile {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2e2e2e;
+    border-radius: 14px;
+    background: #161616;
+    color: #aaa;
+    font-size: clamp(22px, 6vw, 40px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+.p-tile:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: #1e1e1e;
+    border-color: #555;
+    color: white;
+}
+
+.p-tile:active {
+    transform: scale(0.95);
+}
+
+.p-tile:focus-visible {
+    outline: 2px solid #888;
+    outline-offset: 2px;
+}
+
+.p-tile.empty {
+    background: transparent;
+    border-color: #1a1a1a;
+    cursor: default;
+    pointer-events: none;
+}
+
+.p-tile.empty:hover {
+    transform: none;
+    background: transparent;
+    border-color: #1a1a1a;
+}
+
+.p-tile.solved {
+    border-color: #4a4a4a;
+    color: #eee;
+    background: #1a1a1a;
+}
+
+/* Moving animation */
+.p-tile.moving {
+    animation: tile-move 0.18s ease;
+}
+
+@keyframes tile-move {
+    0%   { transform: scale(0.9); }
+    60%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+
+/* =========================
+   WIN MESSAGE
+========================= */
+
+.p-win {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+    padding: 40px 30px;
+    background: #0e0e0e;
+    border: 1px solid #2a2a2a;
+    border-radius: 24px;
+    width: 100%;
+    animation: win-appear 0.5s ease forwards;
+}
+
+.p-win.show {
+    display: flex;
+}
+
+@keyframes win-appear {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.p-win-icon {
+    font-size: 28px;
+    color: #aaa;
+    animation: spin-once 0.6s ease forwards;
+}
+
+@keyframes spin-once {
+    from { transform: rotate(0deg) scale(0.5); opacity: 0; }
+    to   { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
+.p-win h2 {
+    font-size: 46px;
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1;
+}
+
+.p-win p {
+    color: #777;
+    font-size: 13px;
+}
+
+.p-win-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+
+/* =========================
+   BOTTOM ACTION
+========================= */
+
+.p-actions {
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.p-action-link {
+    color: #555;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.p-action-link:hover {
+    color: white;
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.p-stats.reveal  { transition-delay: 0.1s; }
+.p-board.reveal  { transition-delay: 0.2s; }
+.p-actions.reveal { transition-delay: 0.3s; }
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+
+    .p-nav { padding: 0 18px; height: 62px; }
+    .p-main { padding: 100px 14px 60px; }
+
+    .p-heading h1 {
+        font-size: clamp(44px, 14vw, 64px);
+        letter-spacing: -3px;
+    }
+
+    .p-board {
+        padding: 10px;
+        gap: 7px;
+        border-radius: 18px;
+    }
+
+    .p-tile { border-radius: 11px; }
+
+    .p-stats { gap: 10px; }
+}
+
+@media (max-width: 360px) {
+
+    .p-nav { padding: 0 14px; height: 58px; }
+    .p-main { padding: 88px 10px 50px; }
+
+    .p-heading h1 {
+        font-size: clamp(38px, 13vw, 54px);
+        letter-spacing: -2px;
+    }
+
+    .p-board {
+        padding: 8px;
+        gap: 5px;
+        border-radius: 14px;
+    }
+
+    .p-tile {
+        border-radius: 9px;
+        font-size: clamp(18px, 6vw, 30px);
+    }
+
+    .p-stat { padding: 10px 14px; min-width: 70px; }
+    .p-stat-value { font-size: 16px; }
+
+    .p-win h2 { font-size: 36px; }
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

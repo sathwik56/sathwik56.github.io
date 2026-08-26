@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sliding puzzle — a small Easter egg from Sathwik's portfolio.">
+    <title>Puzzle — Sathwik Acharya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="puzzle.css">
+</head>
+<body>
+
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <!-- HEADER -->
+    <header class="p-header">
+        <nav class="p-nav">
+            <a href="index.html" class="p-logo" aria-label="Back to portfolio">
+                Sathwik<span>.</span>
+            </a>
+            <a href="index.html" class="p-back-link">
+                ← Back to Portfolio
+            </a>
+        </nav>
+    </header>
+
+    <main class="p-main">
+
+        <div class="p-content">
+
+            <!-- Intro -->
+            <div class="p-heading reveal">
+                <p class="p-label">EASTER EGG ✦</p>
+                <h1>Take a <span>break.</span></h1>
+                <p class="p-subtitle">Solve this. Arrange 1–8 in order. Click (or tap) a tile next to the gap to move it.</p>
+            </div>
+
+            <!-- Stats bar -->
+            <div class="p-stats reveal">
+                <div class="p-stat">
+                    <span class="p-stat-label">MOVES</span>
+                    <span class="p-stat-value" id="moves-count">0</span>
+                </div>
+                <div class="p-stat">
+                    <span class="p-stat-label">TIME</span>
+                    <span class="p-stat-value" id="timer-display">0:00</span>
+                </div>
+                <button class="p-btn" id="shuffle-btn" type="button" aria-label="Shuffle puzzle">
+                    Shuffle
+                </button>
+                <button class="p-btn p-btn-ghost" id="reset-btn" type="button" aria-label="Reset puzzle">
+                    Reset
+                </button>
+            </div>
+
+            <!-- Board -->
+            <div
+                class="p-board reveal"
+                id="puzzle-board"
+                role="grid"
+                aria-label="Sliding puzzle board"
+            ></div>
+
+            <!-- Win message -->
+            <div class="p-win" id="win-message" aria-live="polite">
+                <span class="p-win-icon" aria-hidden="true">✦</span>
+                <h2 id="win-text">Solved.</h2>
+                <p id="win-sub"></p>
+                <div class="p-win-actions">
+                    <button class="p-btn" id="play-again-btn" type="button">Play Again</button>
+                    <a href="contact.html" class="p-btn p-btn-ghost">
+                        Say Hello ↗
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom actions -->
+            <div class="p-actions reveal">
+                <a href="contact.html" class="p-action-link">
+                    Want to say hello? Write a message ↗
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="puzzle.js"></script>
+</body>
+</html>
