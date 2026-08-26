@@ -2,7 +2,7 @@
 
 Personal developer portfolio built with HTML, CSS and vanilla JavaScript. No frameworks, no build tools, no dependencies — just clean, hand-written code.
 
-**Live site:** *(deploy to Netlify or GitHub Pages to get a URL)*
+**Live site:** [sathwik56.github.io](https://sathwik56.github.io)
 
 ---
 
