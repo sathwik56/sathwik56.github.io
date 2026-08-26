@@ -707,16 +707,6 @@ button {
     transform: translateY(-8px);
 }
 
-.about-image-number {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-    color: #aaa;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
 .about-text {
     max-width: 680px;
 }
@@ -1535,6 +1525,8 @@ button {
 
 /* =========================
    CURSOR DOT
+   Desktop: follows mouse with dot + ring
+   Mobile: tap ripple appears at touch point
 ========================= */
 
 .cursor-dot {
@@ -1552,7 +1544,7 @@ button {
     opacity: 1;
 }
 
-/* The core dot */
+/* Core dot */
 .cursor-dot::before {
     content: "";
     position: absolute;
@@ -1562,11 +1554,12 @@ button {
     background: rgba(255, 255, 255, 0.9);
     transform: translate(-50%, -50%) scale(1);
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-                background 0.2s ease;
+                background 0.2s ease,
+                opacity 0.3s ease;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
 }
 
-/* The trailing ring */
+/* Trailing ring */
 .cursor-dot::after {
     content: "";
     position: absolute;
@@ -1580,44 +1573,68 @@ button {
                 opacity 0.3s ease;
 }
 
-/* Pressed state — dot squishes, ring expands */
+/* Pressed: dot squishes, ring expands */
 .cursor-dot.pressed::before {
     transform: translate(-50%, -50%) scale(0.5);
     background: rgba(255, 255, 255, 0.6);
 }
-
 .cursor-dot.pressed::after {
     transform: translate(-50%, -50%) scale(1.7);
     border-color: rgba(255, 255, 255, 0.5);
     opacity: 0;
 }
 
-/* Hovering an interactive element — ring tightens, dot grows */
+/* Hovering interactive element */
 .cursor-dot.hovering::before {
     transform: translate(-50%, -50%) scale(1.5);
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
 }
-
 .cursor-dot.hovering::after {
     transform: translate(-50%, -50%) scale(0.7);
     border-color: rgba(255, 255, 255, 0.45);
 }
 
-/* Click ripple burst — applied momentarily via JS */
+/* Click ripple burst */
 .cursor-dot.ripple::after {
-    transform: translate(-50%, -50%) scale(3);
+    transform: translate(-50%, -50%) scale(3.5);
     border-color: rgba(255, 255, 255, 0);
-    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1),
-                border-color 0.5s ease,
-                opacity 0.5s ease;
+    transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.4, 1),
+                border-color 0.55s ease,
+                opacity 0.55s ease;
     opacity: 0;
 }
 
-/* Only show custom cursor on real pointer/mouse devices */
+/* Mobile tap ripple — bigger ring, no persistent dot */
 @media (hover: none) {
+    /* Hide the core dot on touch — finger is the cursor */
+    .cursor-dot::before {
+        opacity: 0;
+    }
+
+    /* Tap ring: larger, more visible for a finger */
+    .cursor-dot::after {
+        width: 44px;
+        height: 44px;
+        border: 1.5px solid rgba(255, 255, 255, 0.35);
+    }
+
+    /* On tap: ring bursts out and fades */
+    .cursor-dot.ripple::after {
+        transform: translate(-50%, -50%) scale(2.8);
+        border-color: rgba(255, 255, 255, 0);
+        opacity: 0;
+        transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1),
+                    border-color 0.5s ease,
+                    opacity 0.5s ease;
+    }
+
+    /* Hide the dot between taps — only show on touch */
     .cursor-dot {
-        display: none;
+        opacity: 0 !important;
+    }
+    .cursor-dot.tap-active {
+        opacity: 1 !important;
     }
 }
 
