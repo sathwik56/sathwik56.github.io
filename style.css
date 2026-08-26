@@ -1199,6 +1199,8 @@ button {
     flex-direction: column;
     gap: 4px;
     flex: 1;
+    min-width: 0; /* allow flex child to shrink below content size */
+    overflow: hidden;
 }
 
 .contact-links a div span {
@@ -1212,6 +1214,10 @@ button {
     color: #ccc;
     font-size: 13px;
     font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
 }
 
 .contact-arrow {
@@ -1524,6 +1530,95 @@ button {
     .timeline-item { padding-left: 24px; }
 
     .footer { padding: 25px 16px; }
+}
+
+
+/* =========================
+   CURSOR DOT
+========================= */
+
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    will-change: transform;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-dot.visible {
+    opacity: 1;
+}
+
+/* The core dot */
+.cursor-dot::before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+                background 0.2s ease;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* The trailing ring */
+.cursor-dot::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease,
+                opacity 0.3s ease;
+}
+
+/* Pressed state — dot squishes, ring expands */
+.cursor-dot.pressed::before {
+    transform: translate(-50%, -50%) scale(0.5);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.cursor-dot.pressed::after {
+    transform: translate(-50%, -50%) scale(1.7);
+    border-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+}
+
+/* Hovering an interactive element — ring tightens, dot grows */
+.cursor-dot.hovering::before {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
+}
+
+.cursor-dot.hovering::after {
+    transform: translate(-50%, -50%) scale(0.7);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Click ripple burst — applied momentarily via JS */
+.cursor-dot.ripple::after {
+    transform: translate(-50%, -50%) scale(3);
+    border-color: rgba(255, 255, 255, 0);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.4, 1),
+                border-color 0.5s ease,
+                opacity 0.5s ease;
+    opacity: 0;
+}
+
+/* Only show custom cursor on real pointer/mouse devices */
+@media (hover: none) {
+    .cursor-dot {
+        display: none;
+    }
 }
 
 

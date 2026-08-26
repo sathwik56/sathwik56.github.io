@@ -271,3 +271,110 @@ if (heroVisual && !isTouchDevice) {
         }
     });
 })();
+
+
+/* =========================
+   CURSOR / TOUCH DOT
+   Dot + ring with click ripple,
+   hover feedback on interactive els.
+   pointermove/down/up covers
+   both mouse and touch in one path.
+========================= */
+
+(function () {
+    const dot = document.getElementById("cursor-dot");
+    if (!dot) return;
+
+    // Skip on reduced-motion or touch-only devices
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(hover: none)").matches) return;
+
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let rafId   = null;
+    let rippleTimer = null;
+
+    const LERP = 0.16; // smoothness — lower = more lag
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+
+    function tick() {
+        currentX = lerp(currentX, targetX, LERP);
+        currentY = lerp(currentY, targetY, LERP);
+        dot.style.left = currentX + "px";
+        dot.style.top  = currentY + "px";
+        rafId = requestAnimationFrame(tick);
+    }
+
+    tick(); // start loop immediately
+
+    /* --- pointer move --- */
+    document.addEventListener("pointermove", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        dot.classList.add("visible");
+    }, { passive: true });
+
+    /* --- pointer down: squish + ripple --- */
+    document.addEventListener("pointerdown", (e) => {
+        targetX = e.clientX;
+        targetY = e.clientY;
+        dot.classList.add("visible");
+
+        // Remove ripple class first so re-triggering resets the animation
+        dot.classList.remove("ripple");
+        void dot.offsetWidth; // force reflow
+
+        dot.classList.add("pressed");
+        // Trigger ripple ring burst
+        dot.classList.add("ripple");
+
+        // Clean up ripple after animation
+        clearTimeout(rippleTimer);
+        rippleTimer = setTimeout(() => {
+            dot.classList.remove("ripple");
+        }, 520);
+
+    }, { passive: true });
+
+    /* --- pointer up: return to normal --- */
+    document.addEventListener("pointerup", () => {
+        dot.classList.remove("pressed");
+    }, { passive: true });
+
+    document.addEventListener("pointercancel", () => {
+        dot.classList.remove("pressed", "ripple");
+    }, { passive: true });
+
+    /* --- hover detection on interactive elements --- */
+    const interactiveSelector =
+        "a, button, [role='button'], input, textarea, select, label, [tabindex]";
+
+    document.addEventListener("pointerover", (e) => {
+        if (e.target.closest(interactiveSelector)) {
+            dot.classList.add("hovering");
+        }
+    }, { passive: true });
+
+    document.addEventListener("pointerout", (e) => {
+        if (e.target.closest(interactiveSelector)) {
+            dot.classList.remove("hovering");
+        }
+    }, { passive: true });
+
+    /* --- hide when leaving window --- */
+    document.documentElement.addEventListener("pointerleave", () => {
+        dot.classList.remove("visible", "hovering", "pressed", "ripple");
+    }, { passive: true });
+
+    /* --- pause loop when tab is hidden --- */
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            cancelAnimationFrame(rafId);
+        } else {
+            tick();
+        }
+    });
+})();
