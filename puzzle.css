@@ -471,7 +471,7 @@ button {
     .p-main { padding: 88px 10px 50px; }
 
     .p-heading h1 {
-        font-size: clamp(38px, 13vw, 54px);
+        font-size: clamp(36px, 12vw, 52px);
         letter-spacing: -2px;
     }
 
@@ -484,12 +484,42 @@ button {
     .p-tile {
         border-radius: 9px;
         font-size: clamp(18px, 6vw, 30px);
+        min-height: 44px; /* touch target */
     }
 
     .p-stat { padding: 10px 14px; min-width: 70px; }
     .p-stat-value { font-size: 16px; }
 
     .p-win h2 { font-size: 36px; }
+}
+
+@media (max-width: 340px) {
+
+    .p-nav { padding: 0 12px; height: 56px; }
+    .p-main { padding: 82px 8px 44px; }
+
+    .p-heading h1 {
+        font-size: clamp(30px, 11vw, 44px);
+        letter-spacing: -1.5px;
+    }
+
+    .p-subtitle { font-size: 12px; }
+
+    .p-board {
+        padding: 6px;
+        gap: 4px;
+        border-radius: 12px;
+    }
+
+    .p-tile { border-radius: 7px; }
+
+    .p-stat { padding: 9px 11px; min-width: 62px; }
+    .p-stat-value { font-size: 15px; }
+
+    .p-btn { padding: 10px 16px; font-size: 11px; }
+
+    .p-win { padding: 28px 18px; }
+    .p-win h2 { font-size: 30px; }
 }
 
 

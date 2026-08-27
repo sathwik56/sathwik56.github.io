@@ -1420,16 +1420,18 @@ button {
 
     .btn {
         justify-content: center;
+        padding: 14px 20px; /* bigger touch target */
     }
 
     .hero-socials {
         flex-wrap: wrap;
         gap: 8px;
+        justify-content: center;
     }
 
     .social-icon-link {
-        padding: 8px 12px;
-        font-size: 10px;
+        padding: 10px 14px; /* minimum 44px touch target height */
+        font-size: 11px;
     }
 
     .hero h1 {
@@ -1462,27 +1464,52 @@ button {
     .back-to-top {
         right: 12px;
         bottom: 12px;
-        width: 38px;
-        height: 38px;
+        width: 42px; /* 44px touch target */
+        height: 42px;
         font-size: 15px;
     }
+
+    /* Contact links — better touch spacing */
+    .contact-links a {
+        padding: 20px 0;
+        min-height: 64px;
+    }
+
+    .contact-link-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Skills tags — bigger tap area */
+    .skill-list span {
+        padding: 10px 14px;
+    }
+
+    /* Section spacing tighter on small phones */
+    .section { padding: 80px 20px; }
+
+    .section-heading { margin-bottom: 50px; }
 }
 
 
 /* =========================
-   RESPONSIVE — VERY SMALL 360px
+   RESPONSIVE — VERY SMALL 380px
 ========================= */
 
 @media (max-width: 380px) {
 
     .navbar { padding: 0 16px; }
-    .section { padding: 80px 16px; }
+    .section { padding: 70px 16px; }
     .hero { padding-left: 16px; padding-right: 16px; }
 
     .hero h1 {
-        font-size: clamp(38px, 12vw, 52px);
+        font-size: clamp(36px, 12vw, 50px);
         letter-spacing: -2px;
     }
+
+    .hero-description { font-size: 14px; }
+
+    .status-badge { font-size: 11px; padding: 9px 13px; }
 
     .hero-image-frame {
         width: 210px;
@@ -1494,14 +1521,10 @@ button {
     .orbit-one { width: 290px; height: 290px; }
     .orbit-two { width: 320px; height: 190px; }
 
-    .status-badge { font-size: 10px; }
-
-    .hero-description { font-size: 14px; }
-
     .large-text { font-size: 18px !important; }
 
     .project-card, .featured-project {
-        min-height: 350px;
+        min-height: 320px;
         padding: 20px;
     }
 
@@ -1510,6 +1533,64 @@ button {
     .timeline-item { padding-left: 24px; }
 
     .footer { padding: 25px 16px; }
+
+    /* Ensure all interactive elements meet 44px minimum */
+    .btn { min-height: 44px; }
+    .contact-links a { min-height: 60px; }
+}
+
+
+/* =========================
+   RESPONSIVE — 320px
+========================= */
+
+@media (max-width: 340px) {
+
+    .navbar { padding: 0 14px; min-height: 62px; }
+    .section { padding: 65px 14px; }
+    .hero { padding: 100px 14px 60px; }
+
+    .hero h1 {
+        font-size: clamp(32px, 11vw, 46px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description { font-size: 13px; }
+
+    .hero-image-frame { width: 190px; height: 255px; }
+    .hero-visual { min-height: 295px; }
+
+    .orbit-one { width: 260px; height: 260px; }
+    .orbit-two { width: 290px; height: 170px; }
+
+    .section-heading h2 {
+        font-size: clamp(32px, 10vw, 46px);
+        letter-spacing: -1.5px;
+    }
+
+    .section-heading { margin-bottom: 40px; }
+
+    .project-card, .featured-project {
+        min-height: 290px;
+        padding: 18px;
+    }
+
+    .project-tags span { padding: 5px 8px; font-size: 9px; }
+
+    .skill-list span { padding: 9px 11px; font-size: 10px; }
+
+    .learning-card { min-height: 230px; padding: 22px; }
+    .learning-card h3 { font-size: 19px; margin-top: 40px; }
+
+    .contact-intro h2 {
+        font-size: clamp(30px, 10vw, 44px);
+        letter-spacing: -1.5px;
+    }
+
+    .footer { padding: 20px 14px; gap: 14px; }
+    .footer strong { font-size: 15px; }
+    .footer-links { gap: 8px; }
+    .footer-icon-link { padding: 7px 10px; font-size: 10px; }
 }
 
 
@@ -1593,6 +1674,13 @@ button {
                 border-color 0.55s ease,
                 opacity 0.55s ease;
     opacity: 0;
+}
+
+/* Hide on touch/mobile — cursor is mouse-only */
+@media (hover: none), (pointer: coarse) {
+    .cursor-dot {
+        display: none !important;
+    }
 }
 
 /* =========================

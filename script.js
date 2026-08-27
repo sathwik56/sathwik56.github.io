@@ -275,15 +275,18 @@ if (heroVisual && !isTouchDevice) {
 
 /* =========================
    CURSOR / TOUCH DOT
-   Same smooth behaviour on desktop and mobile.
-   Dot + ring, click/tap ripple, hover glow.
+   Desktop/mouse only — hidden on touch devices.
 ========================= */
 
 (function () {
     const dot = document.getElementById("cursor-dot");
     if (!dot) return;
 
+    // Skip on reduced-motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Skip entirely on touch / coarse-pointer devices
+    if (window.matchMedia("(hover: none), (pointer: coarse)").matches) return;
 
     let targetX = 0, targetY = 0;
     let currentX = 0, currentY = 0;
@@ -312,14 +315,12 @@ if (heroVisual && !isTouchDevice) {
         }, 560);
     }
 
-    /* Move */
     document.addEventListener("pointermove", (e) => {
         targetX = e.clientX;
         targetY = e.clientY;
         dot.classList.add("visible");
     }, { passive: true });
 
-    /* Press / tap */
     document.addEventListener("pointerdown", (e) => {
         targetX = e.clientX;
         targetY = e.clientY;
@@ -335,7 +336,6 @@ if (heroVisual && !isTouchDevice) {
         dot.classList.remove("pressed", "ripple");
     }, { passive: true });
 
-    /* Hover glow on interactive elements */
     const sel = "a, button, [role='button'], input, textarea, select, [tabindex]";
     document.addEventListener("pointerover", (e) => {
         if (e.target.closest(sel)) dot.classList.add("hovering");
@@ -344,12 +344,10 @@ if (heroVisual && !isTouchDevice) {
         if (e.target.closest(sel)) dot.classList.remove("hovering");
     }, { passive: true });
 
-    /* Hide when pointer leaves window */
     document.documentElement.addEventListener("pointerleave", () => {
         dot.classList.remove("visible", "hovering", "pressed", "ripple");
     }, { passive: true });
 
-    /* Pause when tab hidden */
     document.addEventListener("visibilitychange", () => {
         if (document.hidden) cancelAnimationFrame(rafId);
         else tick();
