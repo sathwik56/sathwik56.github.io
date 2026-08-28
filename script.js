@@ -26,6 +26,9 @@ if (menuToggle && navLinks) {
         menuToggle.classList.toggle("open", isOpen);
         document.body.classList.toggle("menu-open", isOpen);
         menuToggle.setAttribute("aria-expanded", String(isOpen));
+        // Manage focus trap when mobile nav opens
+        if (isOpen) enableNavFocusTrap(navLinks, menuToggle);
+        else disableNavFocusTrap(menuToggle);
     });
 
     // Close on nav link click
@@ -45,9 +48,52 @@ if (menuToggle && navLinks) {
             menuToggle.classList.remove("open");
             document.body.classList.remove("menu-open");
             menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.focus();
+            // ensure focus returns to the toggle and remove trap
+            disableNavFocusTrap(menuToggle);
         }
     });
+}
+
+// Simple focus trap for the mobile navigation
+let _navTrap = {
+    handler: null,
+    first: null,
+    last: null,
+    container: null,
+};
+
+function enableNavFocusTrap(container, returnTo) {
+    _navTrap.container = container;
+    const sel = 'a, button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    const els = Array.from(container.querySelectorAll(sel)).filter(el => !el.hasAttribute('disabled'));
+    if (els.length === 0) return;
+    _navTrap.first = els[0];
+    _navTrap.last = els[els.length - 1];
+
+    _navTrap.handler = function (e) {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) {
+            if (document.activeElement === _navTrap.first) {
+                e.preventDefault();
+                _navTrap.last.focus();
+            }
+        } else {
+            if (document.activeElement === _navTrap.last) {
+                e.preventDefault();
+                _navTrap.first.focus();
+            }
+        }
+    };
+
+    document.addEventListener('keydown', _navTrap.handler);
+    // focus the first element inside menu
+    setTimeout(() => _navTrap.first && _navTrap.first.focus(), 50);
+}
+
+function disableNavFocusTrap(returnTo) {
+    if (_navTrap.handler) document.removeEventListener('keydown', _navTrap.handler);
+    _navTrap = { handler: null, first: null, last: null, container: null };
+    if (returnTo && typeof returnTo.focus === 'function') returnTo.focus();
 }
 
 
