@@ -18,7 +18,7 @@ Personal developer portfolio built with HTML, CSS and vanilla JavaScript. No fra
 
 ## Sections (index.html)
 
-- **Hero** — name, tagline, three CTA buttons, social links
+- **Hero** — name, role cycle, portrait, primary actions and social links
 - **About** — background, education, interests, detail grid
 - **Projects** — four project cards with live links
 - **Skills** — development and tools/productivity groups
@@ -43,17 +43,15 @@ Personal developer portfolio built with HTML, CSS and vanilla JavaScript. No fra
 
 - Fully responsive — tested from 360px to 1440px+
 - Smooth scroll reveal animations via `IntersectionObserver`
-- Subtle floating particle background (canvas, no library)
-- Active nav highlight as you scroll through sections
-- Animated hamburger menu with Escape key support
-- 3D tilt on project cards (desktop only, disabled on touch)
-- Hero portrait parallax on mouse move (desktop only)
+- Animated skill ticker and moving projects background heading
+- Staggered project-card entrances and hover states
+- Desktop custom cursor with interactive hover state
 - Back-to-top button
 - Page loader
-- Separate contact page with icon links
+- Separate contact page with validated mailto form and icon links
 - Working sliding puzzle with timer, move counter, keyboard support, win screen
 - Reduced-motion support (`prefers-reduced-motion`)
-- Accessible: semantic HTML, ARIA labels, focus states
+- Accessible: semantic HTML, ARIA labels, focus states, reduced-motion support
 
 ---
 
