@@ -2,8 +2,6 @@
    SLIDING PUZZLE GAME
 ========================= */
 
-const prefReduced = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
 const GRID = 3;
 const SOLVED = [1, 2, 3, 4, 5, 6, 7, 8, 0]; // 0 = empty
 
@@ -250,6 +248,8 @@ document.addEventListener("keydown", (e) => {
    REVEAL ANIMATION
 ========================= */
 
+const revealEls = document.querySelectorAll(".reveal");
+
 const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -259,33 +259,8 @@ const revealObs = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".reveal").forEach(el => revealObs.observe(el));
+revealEls.forEach(el => revealObs.observe(el));
 
-/* Page loader */
-window.addEventListener("load", () => {
-    const l = document.getElementById("loader");
-    if (!l) return;
-    setTimeout(() => {
-        document.body.classList.add("intro-ready");
-        l.classList.add("hidden");
-        setTimeout(() => l.remove(), 600);
-    }, prefReduced ? 0 : 800);
-});
-
-/* Back to top */
-(function () {
-    const btn = document.getElementById("btt");
-    if (!btn) return;
-    const update = () => {
-        btn.classList.toggle("show", window.scrollY > 450);
-        document.body.classList.toggle("show-mobile-rail", window.scrollY > 260);
-    };
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    btn.addEventListener("click", () =>
-        window.scrollTo({ top: 0, behavior: "smooth" })
-    );
-})();
 
 /* =========================
    INIT — start shuffled

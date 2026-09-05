@@ -1,384 +1,586 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sathwik Acharya — Web Developer, MCA Student. Aspiring developer building practical web projects.">
-  <meta name="author" content="Sathwik Acharya">
-  <meta property="og:title" content="Sathwik Acharya | Developer Portfolio">
-  <meta property="og:description" content="Aspiring developer who turns ideas into working websites and applications.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sathwik56.github.io">
-  <meta property="og:image" content="https://sathwik56.github.io/images/profile1.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#000000">
-  <link rel="canonical" href="https://sathwik56.github.io">
-  <link rel="icon" type="image/jpeg" href="images/profile1.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <title>Sathwik Acharya | Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sathwik Acharya — BCA Graduate, MCA Student and aspiring developer building practical web projects.">
+    <meta name="author" content="Sathwik Acharya">
+    <meta property="og:title" content="Sathwik Acharya | Developer Portfolio">
+    <meta property="og:description" content="Aspiring developer building practical web projects while learning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sathwik56.github.io">
+    <meta property="og:image" content="https://sathwik56.github.io/images/profile1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sathwik Acharya | Developer Portfolio">
+    <meta name="twitter:description" content="Aspiring developer building practical web projects while learning.">
+    <meta name="twitter:image" content="https://sathwik56.github.io/images/profile1.jpg">
+    <meta name="theme-color" content="#080808">
+    <title>Sathwik Acharya | Developer Portfolio</title>
+    <link rel="icon" type="image/jpeg" href="images/profile1.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Custom cursor -->
-  <div id="cursor" aria-hidden="true"></div>
-
-  <!-- Opening intro -->
-  <div id="loader" aria-hidden="true">
-    <div class="loader-content">
-      <span class="loader-kicker">SATHWIK ACHARYA</span>
-      <strong class="loader-title">Building useful things.</strong>
-      <span class="loader-role">Web developer / MCA student</span>
-      <div class="loader-progress"><span></span></div>
-    </div>
-  </div>
-
-  <!-- Back to top -->
-  <button id="btt" aria-label="Back to top">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
-
-  <!-- ── TOP BAR ── -->
-  <div class="top-bar" role="banner">
-    <a href="#home" class="top-handle">Sathwik Acharya</a>
-  </div>
-
-  <!-- ── RIGHT ICON RAIL ── -->
-  <nav class="icon-rail" aria-label="Social links">
-    <a href="mailto:sathwikacharya022@gmail.com" class="rail-icon" aria-label="Email">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-    </a>
-    <a href="https://in.linkedin.com/in/sathwik-acharya-07447a357" target="_blank" rel="noopener noreferrer" class="rail-icon" aria-label="LinkedIn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-    </a>
-    <a href="https://github.com/sathwik56" target="_blank" rel="noopener noreferrer" class="rail-icon" aria-label="GitHub">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-    </a>
-    <a href="https://www.instagram.com/sathwik.acharya_/" target="_blank" rel="noopener noreferrer" class="rail-icon" aria-label="Instagram">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-    </a>
-  </nav>
-
-  <main id="main">
-
-    <!-- ── HERO WRAPPER (Black Background) ── -->
-    <div class="section-wrapper bg-black">
-    <!-- ── HERO ── -->
-    <section id="home" class="hero" aria-label="Introduction">
-      <div class="hero-content">
-        <p class="hero-greeting hero-reveal" id="greeting">Hi, Good Evening</p>
-
-        <h1 class="hero-h1 hero-reveal">
-          <span class="h1-name">I am Sathwik</span>
-          <span class="h1-role-wrap">
-            <span class="h1-role" id="role-word">Web</span>
-          </span>
-          <span class="h1-suffix">developer</span>
-        </h1>
-
-        <p class="hero-sub hero-reveal">Building websites &amp; apps from scratch &bull; Exploring web technologies<br>Learning by doing &bull; BCA Graduate &bull; MCA Student</p>
-
-        <div class="hero-btns hero-reveal">
-          <a href="contact.html" class="circle-btn circle-dark">
-            <span>Get<br>In Touch</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-          <a href="puzzle.html" class="circle-btn circle-orange">
-            <span>Open<br>Side Quest</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-photo-col">
-        <img src="images/profile.jpg" alt="Sathwik Acharya" class="hero-img hero-reveal" loading="eager">
-      </div>
-      <div class="hero-scroll-cue" aria-hidden="true"><span></span>Scroll to explore</div>
-    </section>
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="page-loader" aria-hidden="true">
+        <span>Loading...</span>
     </div>
 
-    <!-- ── SKILL TICKER ── -->
-    <div class="marquee-section" aria-hidden="true">
-      <div class="marquee-inner">
-        <div class="marquee-track">
-          <span>WEB DEVELOPER</span><span class="mstar">✦</span>
-          <span>MCA STUDENT</span><span class="mstar">✦</span>
-          <span>PYTHON DEVELOPER</span><span class="mstar">✦</span>
-          <span>BCA GRADUATE</span><span class="mstar">✦</span>
-          <span>FLASK DEVELOPER</span><span class="mstar">✦</span>
-          <span>WEB DEVELOPER</span><span class="mstar">✦</span>
-          <span>MCA STUDENT</span><span class="mstar">✦</span>
-          <span>PYTHON DEVELOPER</span><span class="mstar">✦</span>
-          <span>BCA GRADUATE</span><span class="mstar">✦</span>
-          <span>FLASK DEVELOPER</span><span class="mstar">✦</span>
+    <!-- CURSOR DOT -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 14 12 8 18 14" />
+        </svg>
+    </button>
+
+    <!-- BACKGROUND -->
+    <div class="background-grid" aria-hidden="true"></div>
+    <div class="background-glow glow-one" aria-hidden="true"></div>
+    <div class="background-glow glow-two" aria-hidden="true"></div>
+    <div class="background-glow glow-three" aria-hidden="true"></div>
+    <canvas class="bg-particles" id="bg-particles" aria-hidden="true"></canvas>
+
+    <!-- NAVIGATION -->
+    <header class="header" id="header">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <a href="#home" class="logo" aria-label="Sathwik Acharya - Home">Sathwik<span>.</span></a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#about" data-section="about">About</a></li>
+                <li><a href="#projects" data-section="projects">Projects</a></li>
+                <li><a href="#skills" data-section="skills">Skills</a></li>
+                <li><a href="#learning" data-section="learning">Learning</a></li>
+                <li><a href="#journey" data-section="journey">Journey</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section id="home" class="hero">
+            <div class="hero-content reveal">
+                <div class="status-badge">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Currently learning &amp; building
+                </div>
+
+                <p class="eyebrow">BCA Graduate • MCA Student</p>
+
+                <h1>
+                    Building my
+                    <span>digital journey.</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm Sathwik Acharya, an aspiring developer who enjoys
+                    building websites, experimenting with technology and
+                    learning by turning ideas into working projects.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">
+                        Explore My Work <span aria-hidden="true">↓</span>
+                    </a>
+                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn accent-btn"
+                        aria-label="View resume">
+                        Resume <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="contact.html" class="btn secondary-btn">
+                        Get In Touch <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="puzzle.html" class="btn puzzle-btn" aria-label="Try a puzzle game">
+                        Try Puzzle <span aria-hidden="true">✦</span>
+                    </a>
+                </div>
+
+                <div class="hero-socials">
+                    <a href="https://github.com/sathwik56" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub profile" class="social-icon-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://in.linkedin.com/in/sathwik-acharya-07447a357" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn profile" class="social-icon-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/sathwik.acharya_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram profile" class="social-icon-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal" id="hero-visual">
+                <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+                <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+                <div class="hero-image-frame">
+                    <img src="images/profile.jpg" alt="Sathwik Acharya — developer portrait" class="hero-image">
+                    <div class="image-label" aria-hidden="true">
+                        Sathwik Acharya
+                        <span>Aspiring Developer</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARQUEE -->
+        <section class="marquee-section" aria-hidden="true">
+            <div class="marquee">
+                <span>WEB DEVELOPMENT</span><i>✦</i>
+                <span>BUILDING PROJECTS</span><i>✦</i>
+                <span>LEARNING</span><i>✦</i>
+                <span>FITNESS</span><i>✦</i>
+                <span>CONTENT CREATION</span><i>✦</i>
+                <span>WEB DEVELOPMENT</span><i>✦</i>
+                <span>BUILDING PROJECTS</span><i>✦</i>
+                <span>LEARNING</span><i>✦</i>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="section-heading reveal">
+                <p class="section-label">01 / ABOUT</p>
+                <h2>Learning by <span>building.</span></h2>
+            </div>
+
+            <div class="about-container">
+                <div class="about-image reveal">
+                    <img src="images/profile1.jpg" alt="Sathwik Acharya">
+                </div>
+
+                <div class="about-text reveal">
+                    <p class="large-text">
+                        I believe the best way to learn technology is to actually build something with it.
+                    </p>
+                    <p>
+                        I'm Sathwik Acharya, a BCA graduate from Sri Bhuvanendra College, Karkala.
+                        I completed my BCA in 2026 and I'm currently pursuing my MCA.
+                    </p>
+                    <p>
+                        I'm interested in web development, technology, fitness, gym and content creation.
+                        I enjoy experimenting with ideas and turning them into real websites and applications.
+                    </p>
+                    <p>
+                        I've used AI-assisted development tools such as Kiro, Gemini and ChatGPT while creating
+                        projects.
+                        My current goal is to understand the fundamentals behind what I build and become more
+                        independent as a developer.
+                    </p>
+
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span>Education</span>
+                            <strong>BCA — 2026</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>College</span>
+                            <strong>Sri Bhuvanendra College, Karkala</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Currently</span>
+                            <strong>MCA Student</strong>
+                        </div>
+                        <div class="detail-item">
+                            <span>Interests</span>
+                            <strong>Development • Fitness • Content</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section projects-section">
+            <div class="section-heading reveal">
+                <p class="section-label">02 / PROJECTS</p>
+                <h2>Things I've <span>built.</span></h2>
+                <p>Projects created while learning, experimenting and exploring different technologies.</p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- PROJECT 1 -->
+                <article class="project-card featured-project reveal" tabindex="0">
+                    <div class="project-top">
+                        <span class="project-number">01</span>
+                        <span class="project-type">COLLEGE PROJECT</span>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <p class="project-category">Web Application</p>
+                            <h3>Virtual Interior Designer</h3>
+                            <p class="project-description">
+                                An interactive virtual interior design web application featuring 3D furniture
+                                and spatial visualization. Built with Flask and Three.js for an immersive
+                                browser-based 3D interior design experience.
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Flask</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Three.js</span>
+                            </div>
+                            <a href="https://virtual-interior-designer-u5mt.onrender.com/" target="_blank"
+                                rel="noopener noreferrer" class="project-link"
+                                aria-label="View Virtual Interior Designer project">
+                                View Project <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 2 -->
+                <article class="project-card reveal" tabindex="0">
+                    <div class="project-top">
+                        <span class="project-number">02</span>
+                        <span class="project-type">PERSONAL</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-category">Fitness / Web Design</p>
+                        <h3>Fitness Portfolio</h3>
+                        <p class="project-description">
+                            A fitness-focused website exploring personal branding, visual presentation and web design.
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <a href="https://zev-iron.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="View Fitness Portfolio project">
+                                View Project <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 3 -->
+                <article class="project-card reveal" tabindex="0">
+                    <div class="project-top">
+                        <span class="project-number">03</span>
+                        <span class="project-type">API PROJECT</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-category">Music / Web App</p>
+                        <h3>Aura Music</h3>
+                        <p class="project-description">
+                            A music web application created while experimenting with a third-party music API,
+                            music discovery and an interactive player.
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>API</span>
+                                <span>Web App</span>
+                            </div>
+                            <a href="https://auramusic-app.netlify.app/" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="View Aura Music project">
+                                View Project <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 4 -->
+                <article class="project-card reveal" tabindex="0">
+                    <div class="project-top">
+                        <span class="project-number">04</span>
+                        <span class="project-type">LANDING PAGE</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-category">Athlete / Branding</p>
+                        <h3>Aakriti Khandari</h3>
+                        <p class="project-description">
+                            A landing page concept created for an athlete, focused on personal branding,
+                            visual presentation and online profile design.
+                        </p>
+                        <div class="project-footer">
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://aakriti-official.netlify.app/" target="_blank"
+                                    rel="noopener noreferrer" class="project-link"
+                                    aria-label="View Aakriti Khandari project">
+                                    View Project <span aria-hidden="true">↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section">
+            <div class="section-heading reveal">
+                <p class="section-label">03 / SKILLS</p>
+                <h2>Tools I'm <span>growing with.</span></h2>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-group reveal">
+                    <div class="skill-group-header">
+                        <span>01</span>
+                        <h3>Development</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQL Basics</span>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <div class="skill-group-header">
+                        <span>02</span>
+                        <h3>Tools &amp; Platforms</h3>
+                    </div>
+                    <div class="skill-list">
+                        <span>VS Code</span>
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>Netlify</span>
+                        <span>Render</span>
+                        <span>AI Tools</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARNING -->
+        <section id="learning" class="section learning-section">
+            <div class="section-heading reveal">
+                <p class="section-label">04 / LEARNING</p>
+                <h2>What's <span>next.</span></h2>
+            </div>
+
+            <div class="learning-grid">
+                <article class="learning-card reveal">
+                    <span class="learning-number">01</span>
+                    <h3>Web Development</h3>
+                    <p>Deepening HTML, CSS and JavaScript skills — moving toward React and modern frontend frameworks.
+                    </p>
+                </article>
+
+                <article class="learning-card reveal">
+                    <span class="learning-number">02</span>
+                    <h3>Data &amp; Databases</h3>
+                    <p>Exploring SQL, data organization and Excel for analysis and clear data representation.</p>
+                </article>
+
+                <article class="learning-card reveal">
+                    <span class="learning-number">03</span>
+                    <h3>Backend Development</h3>
+                    <p>Building on Python and Flask to understand backend logic, APIs and full-stack deployment.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- JOURNEY -->
+        <section id="journey" class="section">
+            <div class="section-heading reveal">
+                <p class="section-label">05 / JOURNEY</p>
+                <h2>Still <span>becoming.</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <span class="timeline-year">2023</span>
+                    <div>
+                        <h3>Started BCA</h3>
+                        <p>Enrolled in Bachelor of Computer Applications at Sri Bhuvanendra College, Karkala. Began
+                            exploring programming and technology.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-year">2025</span>
+                    <div>
+                        <h3>Started building</h3>
+                        <p>Began creating practical websites and applications, exploring web development through real
+                            projects.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-year">2026</span>
+                    <div>
+                        <h3>Completed BCA</h3>
+                        <p>Graduated from Sri Bhuvanendra College, Karkala with a Bachelor of Computer Applications.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <span class="timeline-year">NOW</span>
+                    <div>
+                        <h3>Pursuing MCA</h3>
+                        <p>Continuing my education while improving development, data and practical technology skills.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="contact-container reveal">
+                <div class="contact-intro">
+                    <p class="section-label">06 / CONTACT</p>
+                    <h2>Let's build <span>something.</span></h2>
+                    <p>I'm interested in learning, building projects and connecting with people in technology.</p>
+                    <a href="contact.html" class="btn primary-btn contact-page-btn">
+                        Open Contact Page <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:sathwikacharya022@gmail.com" aria-label="Send email to Sathwik">
+                        <div class="contact-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span>Email</span>
+                            <strong>sathwikacharya022@gmail.com</strong>
+                        </div>
+                        <span class="contact-arrow" aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="https://github.com/sathwik56" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visit GitHub profile">
+                        <div class="contact-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span>GitHub</span>
+                            <strong>@sathwik56</strong>
+                        </div>
+                        <span class="contact-arrow" aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="https://in.linkedin.com/in/sathwik-acharya-07447a357" target="_blank"
+                        rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+                        <div class="contact-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span>LinkedIn</span>
+                            <strong>Sathwik Acharya</strong>
+                        </div>
+                        <span class="contact-arrow" aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="https://www.instagram.com/sathwik.acharya_/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visit Instagram profile">
+                        <div class="contact-link-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span>Instagram</span>
+                            <strong>@sathwik.acharya_</strong>
+                        </div>
+                        <span class="contact-arrow" aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <strong>Sathwik<span>.</span></strong>
+            <p>&copy; 2026 Sathwik Acharya. All Rights Reserved.</p>
         </div>
-      </div>
-    </div>
-
-    <!-- ── ABOUT WRAPPER (Matte Background) ── -->
-    <div class="section-wrapper bg-matte-1">
-      <!-- ── ABOUT ── -->
-      <section id="about" class="about-section" aria-labelledby="about-h2">
-      <div class="about-left">
-        <h2 id="about-h2" class="about-huge reveal">About<br>Me</h2>
-        <div class="about-photo-wrap reveal">
-          <img src="images/profile1.jpg" alt="Sathwik Acharya" loading="lazy">
+        <div class="footer-links">
+            <a href="https://github.com/sathwik56" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                class="footer-icon-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12" />
+                </svg>
+                <span>GitHub</span>
+            </a>
+            <a href="https://in.linkedin.com/in/sathwik-acharya-07447a357" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn" class="footer-icon-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://www.instagram.com/sathwik.acharya_/" target="_blank" rel="noopener noreferrer"
+                aria-label="Instagram" class="footer-icon-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                </svg>
+                <span>Instagram</span>
+            </a>
         </div>
-      </div>
-      <div class="about-right reveal">
-        <div class="about-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <div>
-            <strong>4+ Projects Delivered</strong>
-            <span>Web, Fitness, Music &amp; More</span>
-          </div>
-        </div>
-        <p class="about-bio">Hello! I'm <strong>Sathwik Acharya</strong>, a BCA graduate from Sri Bhuvanendra College, Karkala (2026) and currently pursuing MCA. I specialize in web development and Python/Flask, with a passion for building functional, well-designed web applications.</p>
-        <p class="about-bio" style="margin-top:1rem;">I'm interested in web development, technology, fitness and content creation. I've used AI-assisted tools like Kiro, Gemini and ChatGPT to accelerate learning. My goal is to deeply understand what I build and grow as an independent developer.</p>
-
-        <div class="about-stats">
-          <div class="astat reveal">
-            <span class="astat-num">4+</span>
-            <span class="astat-label">Projects Delivered</span>
-          </div>
-          <div class="astat reveal">
-            <span class="astat-num">2</span>
-            <span class="astat-label">Years Learning</span>
-          </div>
-          <div class="astat reveal">
-            <span class="astat-num">∞</span>
-            <span class="astat-label">Still Growing</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    </div>
-
-    <!-- ── PROJECTS WRAPPER (Black Background) ── -->
-    <div class="section-wrapper bg-black">
-      <!-- ── PROJECTS ── -->
-      <section id="projects" class="projects-section" aria-labelledby="projects-h2">
-      <div class="projects-bg-heading" aria-hidden="true">Selected Work</div>
-      <div class="projects-head">
-        <div class="proj-label-wrap">
-          <span class="section-tag">Projects</span>
-          <h2 id="projects-h2" class="featured-title reveal">Selected<br><span>Work</span></h2>
-        </div>
-      </div>
-
-      <div class="projects-grid">
-
-        <article class="proj-card reveal" tabindex="0">
-          <div class="proj-meta">
-            <span class="proj-num">01</span>
-            <a href="https://virtual-interior-designer-u5mt.onrender.com/" target="_blank" rel="noopener noreferrer" class="proj-name-tag">VIRTUAL INTERIOR</a>
-          </div>
-          <h3 class="proj-title">
-            <a href="https://virtual-interior-designer-u5mt.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Interactive 3D interior design platform">Interactive 3D interior design platform</a>
-          </h3>
-          <p class="proj-desc">Interactive 3D interior design web app with furniture and spatial visualization. Built with Flask and Three.js for an immersive browser-based experience.</p>
-          <div class="proj-tags">
-            <span>Python</span><span>Flask</span><span>Three.js</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" tabindex="0">
-          <div class="proj-meta">
-            <span class="proj-num">02</span>
-            <a href="https://zev-iron.netlify.app/" target="_blank" rel="noopener noreferrer" class="proj-name-tag">FITNESS PORTFOLIO</a>
-          </div>
-          <h3 class="proj-title">
-            <a href="https://zev-iron.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Fitness-focused personal branding website">Fitness-focused personal branding website</a>
-          </h3>
-          <p class="proj-desc">A fitness-focused website exploring personal branding, visual presentation and modern web design aesthetics.</p>
-          <div class="proj-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </article>
-        <article class="proj-card reveal" tabindex="0">
-          <div class="proj-meta">
-            <span class="proj-num">03</span>
-            <a href="https://auramusic-app.netlify.app/" target="_blank" rel="noopener noreferrer" class="proj-name-tag">AURA MUSIC</a>
-          </div>
-          <h3 class="proj-title">
-            <a href="https://auramusic-app.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Music discovery web application">Music discovery web application</a>
-          </h3>
-          <p class="proj-desc">A music web application built with a third-party music API, featuring song discovery and an interactive player.</p>
-          <div class="proj-tags">
-            <span>JavaScript</span><span>API</span><span>Web App</span>
-          </div>
-        </article>
-
-        <article class="proj-card reveal" tabindex="0">
-          <div class="proj-meta">
-            <span class="proj-num">04</span>
-            <a href="https://aakriti-official.netlify.app/" target="_blank" rel="noopener noreferrer" class="proj-name-tag">AAKRITI KHANDARI</a>
-          </div>
-          <h3 class="proj-title">
-            <a href="https://aakriti-official.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Athlete personal branding landing page">Athlete personal branding landing page</a>
-          </h3>
-          <p class="proj-desc">Landing page for an athlete focused on personal branding, visual presentation and online profile design.</p>
-          <div class="proj-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </article>
-
-        <article class="proj-card project-v1 reveal" tabindex="0">
-          <div class="proj-meta">
-            <span class="proj-num">05</span>
-            <a href="https://sathwik56.github.io/" target="_blank" rel="noopener noreferrer" class="proj-name-tag">PORTFOLIO V1</a>
-          </div>
-          <h3 class="proj-title">
-            <a href="https://sathwik56.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Open Portfolio V1">Earlier personal portfolio</a>
-          </h3>
-          <p class="proj-desc">The first version of my portfolio, built while learning frontend development and documenting my progress through practical projects.</p>
-          <div class="proj-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Portfolio</span>
-          </div>
-        </article>
-
-      </div>
-    </section>
-    </div>
-
-    <!-- ── SKILLS WRAPPER (Matte Background) ── -->
-    <div class="section-wrapper bg-matte-2">
-      <!-- ── SKILLS ── -->
-      <section id="skills" class="skills-section" aria-labelledby="skills-h2">
-      <div class="section-top reveal">
-        <span class="section-tag">Skills</span>
-        <h2 id="skills-h2" class="section-h2">Tools I work with</h2>
-      </div>
-
-      <div class="skills-groups reveal">
-        <div class="skill-group">
-          <h3 class="skill-g-title">Development</h3>
-          <div class="skill-pills">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Flask</span><span>SQL Basics</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3 class="skill-g-title">Libraries &amp; Tools</h3>
-          <div class="skill-pills">
-            <span>Three.js</span><span>REST APIs</span><span>CSS Animations</span><span>Responsive Design</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3 class="skill-g-title">Platforms</h3>
-          <div class="skill-pills">
-            <span>VS Code</span><span>Git / GitHub</span><span>Netlify</span><span>Render</span><span>AI Tools</span>
-          </div>
-        </div>
-      </div>
-    </section>
-    </div>
-
-    <!-- ── JOURNEY WRAPPER (Black Background) ── -->
-    <div class="section-wrapper bg-black">
-      <!-- ── JOURNEY ── -->
-      <section id="journey" class="journey-section" aria-labelledby="journey-h2">
-      <div class="section-top reveal">
-        <span class="section-tag">Journey</span>
-        <h2 id="journey-h2" class="section-h2">Still <span class="accent">becoming.</span></h2>
-      </div>
-
-      <ol class="timeline" aria-label="Career timeline">
-        <li class="tl-item reveal">
-          <div class="tl-year">2023</div>
-          <div class="tl-body">
-            <h3>Started BCA</h3>
-            <p>Enrolled in Bachelor of Computer Applications at Sri Bhuvanendra College, Karkala. Began exploring programming and technology.</p>
-          </div>
-        </li>
-        <li class="tl-item reveal">
-          <div class="tl-year">2025</div>
-          <div class="tl-body">
-            <h3>Started building</h3>
-            <p>Began creating practical websites and applications — Virtual Interior Designer, Fitness Portfolio, Aura Music and more.</p>
-          </div>
-        </li>
-        <li class="tl-item reveal">
-          <div class="tl-year">2026</div>
-          <div class="tl-body">
-            <h3>Completed BCA</h3>
-            <p>Graduated from Sri Bhuvanendra College, Karkala with a Bachelor of Computer Applications.</p>
-          </div>
-        </li>
-        <li class="tl-item reveal">
-          <div class="tl-year">Now</div>
-          <div class="tl-body">
-            <h3>Pursuing MCA</h3>
-            <p>Continuing education while improving development, data and practical technology skills.</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-    </div>
-
-    <!-- ── CONTACT WRAPPER (Matte Background) ── -->
-    <div class="section-wrapper bg-matte-1">
-      <!-- ── CONTACT ── -->
-      <section id="contact" class="contact-section" aria-labelledby="contact-h2">
-      <h2 id="contact-h2" class="contact-big reveal"><span class="accent">Bring an idea.</span><br>Let's make it useful.</h2>
-
-      <div class="contact-pill-btns reveal">
-        <a href="mailto:sathwikacharya022@gmail.com" class="pill-btn pill-white">Write A Message</a>
-        <a href="puzzle.html" class="pill-btn pill-orange">Open the side quest</a>
-        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="pill-btn pill-outline">View Resume ↗</a>
-      </div>
-
-      <p class="contact-email-row reveal">
-        <a href="mailto:sathwikacharya022@gmail.com">sathwikacharya022@gmail.com</a>
-      </p>
-
-      <div class="social-cards reveal">
-        <div class="soc-card">
-          <div class="soc-info">
-            <span class="soc-name">LinkedIn</span>
-            <span class="soc-handle">@sathwik-acharya</span>
-          </div>
-          <a href="https://in.linkedin.com/in/sathwik-acharya-07447a357" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-        </div>
-        <div class="soc-card">
-          <div class="soc-info">
-            <span class="soc-name">GitHub</span>
-            <span class="soc-handle">@sathwik56</span>
-          </div>
-          <a href="https://github.com/sathwik56" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
-          </a>
-        </div>
-        <div class="soc-card">
-          <div class="soc-info">
-            <span class="soc-name">Instagram</span>
-            <span class="soc-handle">@sathwik.acharya_</span>
-          </div>
-          <a href="https://www.instagram.com/sathwik.acharya_/" target="_blank" rel="noopener noreferrer" class="soc-btn" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-    </div>
-
-    <!-- ── FOOTER WRAPPER (Black Background) ── -->
-    <div class="section-wrapper footer-wrapper bg-black">
-      <!-- ── FOOTER ── -->
-      <footer class="site-footer">
-      <div class="footer-bottom">
-        <span>&copy; Sathwik Acharya All Rights Reserved</span>
-      </div>
     </footer>
-    </div>
 
-  </main>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
